@@ -7,3 +7,15 @@
 检测部分代码尚未修改。  
 详细信息见[week8ResearchRecord.MD](doc/week8ResearchRecord.MD)
 
+
+## 参考资料
+**原工程地址：**
+https://github.com/ultralytics/yolov5
+
+**预训练权重下载：**
+https://github.com/ultralytics/yolov5/releases/tag/v7.0
+
+**相关教程：**
+https://blog.csdn.net/didiaopao/article/details/119954291?spm=1001.2014.3001.5501
+
+
