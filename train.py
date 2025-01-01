@@ -564,15 +564,15 @@ def parse_opt(known=False):
         - Tutorial: https://docs.ultralytics.com/yolov5/tutorials/train_custom_data
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument("--weights", type=str, default=ROOT / "weights/yolov5m.pt", help="initial weights path")
+    parser.add_argument("--weights", type=str, default=ROOT / "runs/train/exp2/last.pt", help="initial weights path")
     parser.add_argument("--cfg", type=str, default="models/yolov5m_forSARDet.yaml", help="model.yaml path")
     parser.add_argument("--data", type=str, default=ROOT / "data/SARDet-100K.yaml", help="dataset.yaml path")
     parser.add_argument("--hyp", type=str, default=ROOT / "data/hyps/hyp.scratch-med.yaml", help="hyperparameters path")
     parser.add_argument("--epochs", type=int, default=300, help="total training epochs")
-    parser.add_argument("--batch-size", type=int, default=16, help="total batch size for all GPUs, -1 for autobatch")
+    parser.add_argument("--batch-size", type=int, default=-1, help="total batch size for all GPUs, -1 for autobatch") #之前是16
     parser.add_argument("--imgsz", "--img", "--img-size", type=int, default=640, help="train, val image size (pixels)")
     parser.add_argument("--rect", action="store_true", help="rectangular training")
-    parser.add_argument("--resume", nargs="?", const=True, default=False, help="resume most recent training")
+    parser.add_argument("--resume", nargs="?", const=True, default=True, help="resume most recent training")    #之前是default=False，改成True以接续训练
     parser.add_argument("--nosave", action="store_true", help="only save final checkpoint")
     parser.add_argument("--noval", action="store_true", help="only validate final epoch")
     parser.add_argument("--noautoanchor", action="store_true", help="disable AutoAnchor")

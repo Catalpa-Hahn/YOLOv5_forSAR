@@ -6,7 +6,9 @@
 #     └── VOC  ← downloads here (2.8 GB)
 #由VOC.yaml文件修改而来。
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
-path: D:/MyProjects/SciRsch/GraProj/ProjFiles/YOLOv5/yolov5_Try/data/SARDet-100K
+#path: D:/MyProjects/SciRsch/GraProj/ProjFiles/YOLOv5/yolov5_forSAR/data/SARDet-100K #在计算机2上运行时使用此路径，将另一行注释
+path: ./data/SARDet-100K #在计算机1上运行时使用此路径，将另一行注释
+
 train: # train images (relative to 'path')
   - images/train/
 val: # val images (relative to 'path')
