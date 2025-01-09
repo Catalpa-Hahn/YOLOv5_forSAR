@@ -8,3 +8,5 @@ RuntimeError: CUDA error: out of memory
 
 解决：将参数resume设置为True，并将预训练权重参数weight改为最后一代训练权重last.pt后，重新启动训练，实现接续训练。
 
+## 2025-01-04
+第一次117轮训练完成，实现在SARDet-100K测试集上的预测。
