@@ -572,7 +572,7 @@ def parse_opt(known=False):
     parser.add_argument("--batch-size", type=int, default=-1, help="total batch size for all GPUs, -1 for autobatch") #之前是16
     parser.add_argument("--imgsz", "--img", "--img-size", type=int, default=640, help="train, val image size (pixels)")
     parser.add_argument("--rect", action="store_true", help="rectangular training")
-    parser.add_argument("--resume", nargs="?", const=True, default=True, help="resume most recent training")    #之前是default=False，改成True以接续训练
+    parser.add_argument("--resume", nargs="?", const=True, default=False, help="resume most recent training")    #之前是default=False，改成True以接续训练
     parser.add_argument("--nosave", action="store_true", help="only save final checkpoint")
     parser.add_argument("--noval", action="store_true", help="only validate final epoch")
     parser.add_argument("--noautoanchor", action="store_true", help="disable AutoAnchor")
