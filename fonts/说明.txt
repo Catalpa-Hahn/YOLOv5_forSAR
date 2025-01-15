@@ -1,0 +1,1 @@
+Arial.ttf 文件放于服务器 /public/home/fzk1055279850/.config/Ultralytics/Arial.ttf
