@@ -30,6 +30,9 @@ import numpy as np
 import torch
 from tqdm import tqdm
 
+import platform
+import pathlib
+
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
 if str(ROOT) not in sys.path:
@@ -253,6 +256,13 @@ def run(
     Returns:
         dict: Contains performance metrics including precision, recall, mAP50, and mAP50-95.
     """
+    # 处理系统间兼容问题
+    plt = platform.system()  # 判断操作系统类型
+    if plt == 'Windows':
+        pathlib.PosixPath = pathlib.WindowsPath
+    elif plt == 'Linux':
+        pathlib.WindowsPath = pathlib.PosixPath
+
     # Initialize/load model and set device
     training = model is not None
     if training:  # called by train.py
@@ -516,7 +526,7 @@ def parse_opt():
     """
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", type=str, default=ROOT / "data/SARDet-100K.yaml", help="dataset.yaml path")
-    parser.add_argument("--weights", nargs="+", type=str, default=ROOT / "yolov5s.pt", help="model path(s)")
+    parser.add_argument("--weights", nargs="+", type=str, default=ROOT / "weights/best_300epochs.pt", help="model path(s)")
     parser.add_argument("--batch-size", type=int, default=32, help="batch size")
     parser.add_argument("--imgsz", "--img", "--img-size", type=int, default=640, help="inference size (pixels)")
     parser.add_argument("--conf-thres", type=float, default=0.001, help="confidence threshold")
