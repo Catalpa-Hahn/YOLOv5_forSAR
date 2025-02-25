@@ -568,9 +568,9 @@ def parse_opt(known=False):
     parser.add_argument("--cfg", type=str, default="models/yolov5m_forSARDet.yaml", help="model.yaml path")
     parser.add_argument("--data", type=str, default=ROOT / "data/SARDet-100K.yaml", help="dataset.yaml path")
     parser.add_argument("--hyp", type=str, default=ROOT / "data/hyps/hyp.scratch-med.yaml", help="hyperparameters path")
-    parser.add_argument("--epochs", type=int, default=300, help="total training epochs")
-    parser.add_argument("--batch-size", type=int, default=-1, help="total batch size for all GPUs, -1 for autobatch") #之前是16
-    parser.add_argument("--imgsz", "--img", "--img-size", type=int, default=640, help="train, val image size (pixels)")
+    parser.add_argument("--epochs", type=int, default=500, help="total training epochs")
+    parser.add_argument("--batch-size", type=int, default=32, help="total batch size for all GPUs, -1 for autobatch") #之前是16
+    parser.add_argument("--imgsz", "--img", "--img-size", type=int, default=512, help="train, val image size (pixels)")
     parser.add_argument("--rect", action="store_true", help="rectangular training")
     parser.add_argument("--resume", nargs="?", const=True, default=False, help="resume most recent training")    #之前是default=False，改成True以接续训练
     parser.add_argument("--nosave", action="store_true", help="only save final checkpoint")

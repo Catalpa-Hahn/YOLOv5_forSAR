@@ -8,8 +8,8 @@
             <mapping deploy="/autodl-fs/ZihanTang/YOLOv5_forSAR" local="$PROJECT_DIR$" web="/" />
           </mappings>
           <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/runs" />
             <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/runs" />
           </excludedPaths>
         </serverdata>
       </paths>
